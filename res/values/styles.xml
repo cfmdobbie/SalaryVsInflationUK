@@ -1,0 +1,22 @@
+<resources>
+
+    <!-- Base application theme, dependent on API level -->
+    <style name="AppBaseTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <!-- Theme customizations related to backward-compatibility -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- Customizations that are not specific to a particular API-level -->
+    </style>
+
+    <!-- Base style for borderless buttons - note: not borderless in API<11 -->
+    <style name="BorderlessButtonBaseStyle" parent="@android:style/Widget" />
+    <!-- Borderless button style -->
+    <style name="BorderlessButtonStyle" parent="BorderlessButtonBaseStyle" />
+
+    <!-- Button bar -->
+    <style name="ButtonBar" parent="@android:style/ButtonBar"></style>
+    <style name="ButtonBarButton"></style>
+    
+</resources>

@@ -1,0 +1,7 @@
+.*.swp
+.*.swo
+*~
+bin
+libs
+proguard
+gen

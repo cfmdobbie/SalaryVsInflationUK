@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+    <!-- General Strings -->
+
+    <string name="app_name">Salary vs Inflation</string>
+
+    <!-- Menu Items -->
+
+    <string name="action_help">Help</string>
+    <string name="action_delete_all">Delete All Entries</string>
+    <string name="action_back">Back to List</string>
+    
+    <!-- UI Strings -->
+
+    <string name="confirm_delete_message">Delete all entered salaries?</string>
+    <string name="salary_too_large">Salary too large to process</string>
+    <string name="year">Year</string>
+    <string name="salary">Salary</string>
+    <string name="delete">Delete</string>
+    <string name="cpi">CPI</string>
+    <string name="raise_cut">Raise/Cut</string>
+    <string name="estimated">Estimated</string>
+    <string name="get_results">Get Results ></string>
+    <string name="delete_salary_entry">Delete Salary Entry</string>
+    <string name="salary_list_empty">No salary information submitted</string>
+    <string name="add_replace">Add/Replace</string>
+    <string name="raise_message">%s RAISE</string>
+    <string name="cut_message">%s CUT</string>
+    <string name="equal_message">%s</string>
+    
+    <!-- Colours -->
+
+    <color name="red">#ffff0000</color>
+    <color name="green">#ff00ff00</color>
+    <color name="blue">#ff0000ff</color>
+    
+    <!-- Help Text -->
+
+    <string name="help_text">
+<![CDATA[
+<h1>Introduction</h1>
+
+<p>Over time the value of money decreases, so salaries need to increase proportionately just to maintain their value.
+This app allows you to measure your salary against inflation for any period from 1989 to 2013.  Enter figures for just
+one year or for many different years, and you can see how inflation has affected your salary, and how it has maintained
+(or lost!) its value.</p>
+
+<h1>How We Measure Inflation</h1>
+
+<p>The UK government uses a number of different indices for measuring inflation, the two most important being the
+Consumer Price Index (CPI) and the Retail Price Index (RPI).  These take average costs of a vast number of goods and
+services, then weight them based on proportionate consumption to produce a figure that represents the increased cost
+of living from year to year.  CPI and RPI are similar in many ways, the main differences being that CPI omits the cost
+of housing, and that they have different methods of calculating averages.</p>
+
+<p>Since April 2011, CPI is the government\'s preferred index for calculating tax allowances, pension contributions and
+the like - this is for a variety of reasons, including reduced volatility and better accuracy.  CPI also tends to report
+a slightly lower rate of inflation than RPI, as house prices as of 2014 are currently rising proportionately higher than
+the prices of other goods and services.</p>
+
+<p>As CPI is the officially-preferred index, we use this to calculate the effect of inflation on your salary, but please
+remember that this is just one possible measure of inflation.</p>
+
+<p>CPI data is calculated monthly and describes the rise in the cost of living since the same month the previous year.
+Monthly figures are averaged to form both quarterly and yearly figures, but for simplicity, we just use the
+yearly-average figures.</p>
+
+<h1>Entering Your Salary Information</h1>
+
+<p>Simply select a year from the drop-down, then enter your (yearly) salary into the box and press Add/Replace.  For
+your convenience, the app will automatically pre-select the following year ready for your next figure.</p>
+
+<p>If you make a mistake with a figure, just re-enter it -  the new figure will override the old.</p>
+
+<p>Tap the trash can icon against any figure to delete it, or tap the trash can in the top menu bar to remove all
+figures.</p>
+
+<p>This app will remember all entered salary data between runs, so please delete your salary data once you\'re happy
+that you don\'t want it remembered any more, to keep it from prying eyes!</p>
+
+<h1>Interpreting the results</h1>
+
+<p>The results show how your salary has fared against inflation from the first salary you entered up to the most
+recently available CPI data.</p>
+
+<p>Where you have provided a salary, you will find an estimate based on your salary for the previous year, plus an
+indication of whether your salary has increased in real terms, or decreased.  Where you have not provided a salary,
+only the estimate is shown.  Note that during gaps in your record, your salary is assumed to rise in line with
+inflation, so you may see a big adjustment at the end of such a gap, which would in reality be spread out over the
+entire period - the solution, of course, is to provide more data!  The more data you provide, the more accurate the
+calculations will become.</p>
+
+<p>In theory, your salary should increase over the rate of inflation whenever your company has seen fit to reward you
+for your efforts, and should increase in line with inflation at all other times.  In practice, in a depressed economy
+it\'s common to see salaries decrease with respect to inflation.</p>
+
+<h1>We Will Not Share Your Data!</h1>
+
+<p>Please note that this app does not request permissions to perform any kind of network communication, and is therefore
+incapable of transmitting your salary information off of your device.</p>
+
+<p>Your data is stored on the device for the purpose of calculating your results and is remembered between runs to avoid
+you having to re-enter it each time - but you can delete all or part of this data at any time by tapping the trash can
+next to any data you wish to remove.</p>
+
+<p>(For the extra paranoid, note that you can also go into the settings for your device, navigate to Manage
+Applications, select this app in the list and tap "Clear Data" to remove all information that it has stored.  We assert
+that this is not required - the delete functions mentioned above will also delete your entered salary data - but fully
+support your right to not have to take our word for it!)</p>
+]]>
+    </string>
+
+</resources>
