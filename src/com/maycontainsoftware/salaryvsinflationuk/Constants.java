@@ -6,14 +6,14 @@ import java.util.HashMap;
 import android.annotation.SuppressLint;
 
 public class Constants {
-	
+
 	// The CPI data we have runs from 1989 to 2013
 	static final int START_YEAR = 1989;
 	static final int END_YEAR = 2013;
-	
+
 	static final DecimalFormat SALARY_FORMAT = new DecimalFormat("£ #,##0");
 	static final DecimalFormat INFLATION_FORMAT = new DecimalFormat("0.0 '%'");
-	
+
 	// CPI data mapped by year from START_YEAR to END_YEAR inclusive
 	@SuppressLint("UseSparseArrays")
 	static final HashMap<Integer, Float> CPI_BY_YEAR = new HashMap<Integer, Float>(25);

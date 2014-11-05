@@ -32,7 +32,7 @@ import android.widget.Toast;
 
 public class SalaryListActivity extends ActionBarActivity {
 
-	//private static final String TAG = SalaryListActivity.class.getName();
+	// private static final String TAG = SalaryListActivity.class.getName();
 	private SalaryAdapter salaryAdapter;
 	private SharedPreferences preferences;
 	private ListView salaryList;
@@ -45,7 +45,7 @@ public class SalaryListActivity extends ActionBarActivity {
 		// Get references to UI components
 		Spinner yearSpinner = (Spinner) findViewById(R.id.yearSpinner);
 		salaryList = (ListView) findViewById(R.id.salaryList);
-		
+
 		// Set up list of years for Spinner component
 		List<Integer> years = new ArrayList<Integer>();
 		for (int i = START_YEAR; i <= END_YEAR; i++) {
@@ -56,7 +56,7 @@ public class SalaryListActivity extends ActionBarActivity {
 		ArrayAdapter<Integer> yearAdapter = new ArrayAdapter<Integer>(this, android.R.layout.simple_spinner_item, years);
 		yearAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		yearSpinner.setAdapter(yearAdapter);
-		
+
 		// Layout Inflater
 		LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
@@ -75,7 +75,7 @@ public class SalaryListActivity extends ActionBarActivity {
 		// Add the SalaryAdapter to ListView
 		salaryAdapter = new SalaryAdapter(this);
 		salaryList.setAdapter(salaryAdapter);
-		
+
 		// Get reference to SharedPreferences, for saving state
 		preferences = PreferenceManager.getDefaultSharedPreferences(this);
 	}
@@ -122,17 +122,16 @@ public class SalaryListActivity extends ActionBarActivity {
 		case R.id.action_delete_all:
 			// Show confirmation box before deleting all salary entries
 			// But only if there are items to delete!
-			if(salaryAdapter.getData().size() != 0) {
-				new AlertDialog.Builder(this)
-				.setMessage(R.string.confirm_delete_message)
-				.setNegativeButton(android.R.string.cancel, null)
-				.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						salaryAdapter.getData().clear();
-						salaryAdapter.notifyDataSetChanged();
-					}
-				}).show();
+			if (salaryAdapter.getData().size() != 0) {
+				new AlertDialog.Builder(this).setMessage(R.string.confirm_delete_message)
+						.setNegativeButton(android.R.string.cancel, null)
+						.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+							@Override
+							public void onClick(DialogInterface dialog, int which) {
+								salaryAdapter.getData().clear();
+								salaryAdapter.notifyDataSetChanged();
+							}
+						}).show();
 			}
 			return true;
 		}
@@ -154,16 +153,16 @@ public class SalaryListActivity extends ActionBarActivity {
 
 		// If a salary was entered, process it
 		if (salaryText.length() != 0) {
-			
+
 			// Determine salary
 			long salaryValue;
 			try {
 				salaryValue = Long.valueOf(salaryText);
-			} catch(NumberFormatException e) {
+			} catch (NumberFormatException e) {
 				Toast.makeText(getApplicationContext(), R.string.salary_too_large, Toast.LENGTH_SHORT).show();
 				return;
 			}
-			// TODO: This accepts a value that might overflow once salary+inflation is calculated.  Good way to resolve?
+			// TODO: This accepts a value that might overflow once salary+inflation is calculated. Good way to resolve?
 
 			// Get selected year
 			Spinner year = (Spinner) findViewById(R.id.yearSpinner);
@@ -181,11 +180,11 @@ public class SalaryListActivity extends ActionBarActivity {
 			// Add the new entry to the list
 			salaryAdapter.getData().put(selectedYear, salaryValue);
 			salaryAdapter.notifyDataSetChanged();
-			
+
 			// Scroll the ListView to show the new value
 			int position = salaryAdapter.getData().indexOfKey(selectedYear);
 			salaryList.setSelection(position); // Jumps to position
-			//salaryList.smoothScrollToPosition(position); // Doesn't take row height into account
+			// salaryList.smoothScrollToPosition(position); // Doesn't take row height into account
 		}
 	}
 
@@ -209,9 +208,9 @@ public class SalaryListActivity extends ActionBarActivity {
 
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
-			
+
 			View row = convertView;
-			if(row == null) {
+			if (row == null) {
 				row = inflater.inflate(R.layout.salary_list_item, null);
 			}
 

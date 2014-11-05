@@ -264,8 +264,8 @@ public class ResultsActivity extends ActionBarActivity {
 				tvRaiseCut.setText(message);
 				tvRaiseCut.setTextColor(resources.getColor(R.color.blue));
 			} else {
-				String message = resources.getString(result.difference < 0L ? R.string.cut_message : R.string.raise_message,
-						formattedDifference);
+				String message = resources.getString(result.difference < 0L ? R.string.cut_message
+						: R.string.raise_message, formattedDifference);
 				tvRaiseCut.setText(message);
 				tvRaiseCut.setTextColor(resources.getColor(result.difference < 0L ? R.color.red : R.color.green));
 			}

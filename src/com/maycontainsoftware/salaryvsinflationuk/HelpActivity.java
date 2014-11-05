@@ -11,17 +11,17 @@ public class HelpActivity extends ActionBarActivity {
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-	    super.onCreate(savedInstanceState);
-	    setContentView(R.layout.activity_help);
-	    
-	    // TextView to hold the help text
-	    TextView howToPlay = (TextView)findViewById(R.id.help_text);
-	    
-	    // Help text is rendered as HTML
-	    String html = getResources().getString(R.string.help_text);
-	    howToPlay.setText(Html.fromHtml(html));
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_help);
+
+		// TextView to hold the help text
+		TextView howToPlay = (TextView) findViewById(R.id.help_text);
+
+		// Help text is rendered as HTML
+		String html = getResources().getString(R.string.help_text);
+		howToPlay.setText(Html.fromHtml(html));
 	}
-	
+
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 
