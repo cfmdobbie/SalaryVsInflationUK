@@ -1,6 +1,9 @@
 package com.maycontainsoftware.salaryvsinflationuk.test;
 
+import android.app.Instrumentation.ActivityMonitor;
+import android.support.v7.internal.view.menu.ActionMenuItemView;
 import android.test.ActivityInstrumentationTestCase2;
+import android.test.TouchUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
@@ -9,6 +12,7 @@ import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 
 import com.maycontainsoftware.salaryvsinflationuk.Constants;
+import com.maycontainsoftware.salaryvsinflationuk.HelpActivity;
 import com.maycontainsoftware.salaryvsinflationuk.SalaryListActivity;
 
 public class SalaryVsInflationUKTest extends ActivityInstrumentationTestCase2<SalaryListActivity> {
@@ -75,13 +79,34 @@ public class SalaryVsInflationUKTest extends ActivityInstrumentationTestCase2<Sa
 		assertEquals(View.VISIBLE, resultsButton.getVisibility());
 	}
 
+	public void testHelpMenuItemExists() {
+		final ActionMenuItemView helpMenuItem = (ActionMenuItemView) mActivity
+				.findViewById(com.maycontainsoftware.salaryvsinflationuk.R.id.action_help);
+		assertNotNull(helpMenuItem);
+	}
+
+	public void testHelpMenuLaunchesHelpActivity() {
+		// Create a monitor that's looking for the HelpActivity class
+		final ActivityMonitor monitor = getInstrumentation().addMonitor(HelpActivity.class.getName(), null, false);
+
+		// Find and activate the Help menu item
+		final ActionMenuItemView helpMenuItem = (ActionMenuItemView) mActivity
+				.findViewById(com.maycontainsoftware.salaryvsinflationuk.R.id.action_help);
+		TouchUtils.clickView(this, helpMenuItem);
+
+		// Wait for HelpActivity to launch
+		final HelpActivity helpActivity = (HelpActivity) monitor.waitForActivityWithTimeout(1000);
+		assertNotNull(helpActivity);
+
+		// Exit back to SalaryListActivity
+		helpActivity.finish();
+	}
+
 	// Future tests to be written:
 
 	// TODO: Delete All action bar item is no-op when list empty
 	// FUTURE: Or should Delete All be disabled when list is empty?
 	// TODO: Delete All results in empty list when list was not empty
-
-	// TODO: Help action bar item launches HelpActivity
 
 	// TODO: With empty list, entering a salary and pressing Add/Replace results in list with one entry
 	// TODO: Add/Replace is a no-op when Salary box empty
