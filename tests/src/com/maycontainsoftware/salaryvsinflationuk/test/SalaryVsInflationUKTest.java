@@ -59,4 +59,23 @@ public class SalaryVsInflationUKTest extends ActivityInstrumentationTestCase2<Sa
 
 		assertEquals(pos, TEST_POSITION);
 	}
+
+	// Future tests to be written:
+
+	// TODO: Delete All action bar item is no-op when list empty
+	// FUTURE: Or should Delete All be disabled when list is empty?
+	// TODO: Delete All results in empty list when list was not empty
+
+	// TODO: Help action bar item launches HelpActivity
+
+	// TODO: With empty list, entering a salary and pressing Add/Replace results in list with one entry
+	// TODO: Add/Replace is a no-op when Salary box empty
+	// FUTURE: Or should it be disabled when salary box is empty?
+	// TODO: Add/Replace updates a value when the year already exists in list
+	// TODO: Spinner moves to next item if available on Add/Replace
+
+	// TODO: Back button exits application (if virtual keyboard not present!)
+
+	// TODO: Next button does not exist when list is empty
+	// TODO: Next button launches ResultsActivity when list is not empty
 }
