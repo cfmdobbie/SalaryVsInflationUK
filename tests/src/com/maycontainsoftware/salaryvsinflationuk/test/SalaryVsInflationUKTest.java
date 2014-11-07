@@ -2,6 +2,9 @@ package com.maycontainsoftware.salaryvsinflationuk.test;
 
 import android.test.ActivityInstrumentationTestCase2;
 import android.view.KeyEvent;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 
@@ -58,6 +61,18 @@ public class SalaryVsInflationUKTest extends ActivityInstrumentationTestCase2<Sa
 		int pos = mSpinner.getSelectedItemPosition();
 
 		assertEquals(pos, TEST_POSITION);
+	}
+
+	public void testFooterViewExistsOnSalaryList() {
+		final ListView salaryList = (ListView) mActivity
+				.findViewById(com.maycontainsoftware.salaryvsinflationuk.R.id.salaryList);
+		assertEquals(1, salaryList.getFooterViewsCount());
+	}
+
+	public void testResultsButtonVisible() {
+		final Button resultsButton = (Button) mActivity
+				.findViewById(com.maycontainsoftware.salaryvsinflationuk.R.id.resultsButton);
+		assertEquals(View.VISIBLE, resultsButton.getVisibility());
 	}
 
 	// Future tests to be written:
