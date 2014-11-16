@@ -61,11 +61,11 @@ public class SalaryListActivity extends ActionBarActivity {
 		LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
 		// Add header to ListView (must be done before setAdapter)
-		View header = inflater.inflate(R.layout.salary_list_header, null);
+		View header = inflater.inflate(R.layout.salary_list_header, salaryList, false);
 		salaryList.addHeaderView(header, null, false);
 
 		// Add footer to ListView (must be done before setAdapter)
-		View footer = inflater.inflate(R.layout.salary_list_footer, null);
+		View footer = inflater.inflate(R.layout.salary_list_footer, salaryList, false);
 		salaryList.addFooterView(footer);
 
 		// Add empty view to ListView
@@ -211,7 +211,7 @@ public class SalaryListActivity extends ActionBarActivity {
 
 			View row = convertView;
 			if (row == null) {
-				row = inflater.inflate(R.layout.salary_list_item, null);
+				row = inflater.inflate(R.layout.salary_list_item, parent, false);
 			}
 
 			TextView year = (TextView) row.findViewById(R.id.year);
