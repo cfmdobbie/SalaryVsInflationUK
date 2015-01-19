@@ -7,16 +7,16 @@ import android.annotation.SuppressLint;
 
 public class Constants {
 
-	// The CPI data we have runs from 1989 to 2013
+	// The CPI data we have runs from 1989 to 2014
 	public static final int START_YEAR = 1989;
-	public static final int END_YEAR = 2013;
+	public static final int END_YEAR = 2014;
 
 	public static final DecimalFormat SALARY_FORMAT = new DecimalFormat("£ #,##0");
 	public static final DecimalFormat INFLATION_FORMAT = new DecimalFormat("0.0 '%'");
 
 	// CPI data mapped by year from START_YEAR to END_YEAR inclusive
 	@SuppressLint("UseSparseArrays")
-	public static final HashMap<Integer, Float> CPI_BY_YEAR = new HashMap<Integer, Float>(25);
+	public static final HashMap<Integer, Float> CPI_BY_YEAR = new HashMap<Integer, Float>(END_YEAR - START_YEAR + 1);
 	static {
 		CPI_BY_YEAR.put(1989, 5.2f);
 		CPI_BY_YEAR.put(1990, 7f);
@@ -43,5 +43,6 @@ public class Constants {
 		CPI_BY_YEAR.put(2011, 4.5f);
 		CPI_BY_YEAR.put(2012, 2.8f);
 		CPI_BY_YEAR.put(2013, 2.6f);
+		CPI_BY_YEAR.put(2014, 1.5f);
 	}
 }
